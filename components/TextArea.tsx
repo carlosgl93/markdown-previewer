@@ -42,7 +42,7 @@ const TextArea: FC<Props> = ({ id }) => {
         style={{
           backgroundColor: theme.palette.background.paper,
         }}
-        onChange={(e) => handleEditorInput(e)}
+        onChange={(e: any) => handleEditorInput(e)}
       />
     </Box>
   );
