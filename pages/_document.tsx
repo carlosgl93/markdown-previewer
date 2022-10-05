@@ -16,6 +16,7 @@ export default function Document() {
           integrity='sha512-+mCmSlBpa1bF0npQzdpxFWIyJaFbVdEcuyET6FtmHmlXIacQjN/vQs1paCsMlVHHZ2ltD2VTHy3fLFhXQu0AMA=='
           crossOrigin='anonymous'
           referrerPolicy='no-referrer'
+          defer
         ></script>
       </body>
     </Html>
