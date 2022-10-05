@@ -1,6 +1,9 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { Box, TextareaAutosize } from "@mui/material";
+
+import TextArea from "../components/TextArea";
+import PreviewContainer from "../components/PreviewContainer";
+import { Box } from "@mui/material";
 
 const Home: NextPage = () => {
   return (
@@ -11,13 +14,19 @@ const Home: NextPage = () => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      {/* <textarea cols={80} id='editor'></textarea> */}
+      <Box
+        display='flex'
+        justifyContent='center'
+        sx={{
+          backgroundColor: "#97c6ca",
+        }}
+      >
+        {/* Component to insert the text that the user wants to see as markdown */}
+        <TextArea id={"editor"} />
 
-      <TextareaAutosize id='editor' />
-
-      <Box id='preview' />
-
-      {/* <div id='preview'></div> */}
+        {/* Component to display the text that the user inserted into the textarea element  */}
+        <PreviewContainer id='preview' />
+      </Box>
     </>
   );
 };
