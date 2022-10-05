@@ -1,13 +1,15 @@
-import React, { FC, useReducer } from "react";
+import React, { FC, KeyboardEvent, useReducer } from "react";
 import { StateContext } from "./StateContext";
 import { stateReducer } from "./stateReducer";
 
 export interface State {
-  textToMarkUp: string;
+  textToMarkUp: string[];
+  textMarkedUp: string[];
 }
 
-const State_INITIAL_STATE: State = {
-  textToMarkUp: "",
+const STATE_INITIAL_STATE: State = {
+  textToMarkUp: [""],
+  textMarkedUp: [""],
 };
 
 interface Props {
@@ -15,12 +17,23 @@ interface Props {
 }
 
 const StateProvider: FC<Props> = ({ children }) => {
-  const [state, dispatch] = useReducer(stateReducer, State_INITIAL_STATE);
+  const [state, dispatch] = useReducer(stateReducer, STATE_INITIAL_STATE);
+
+  const handleEditorInput = (event: any) => {
+    console.log({ event });
+    dispatch({
+      type: "[Editor] - Handle Input",
+      payload: event.currentTarget.value,
+    });
+  };
 
   return (
     <StateContext.Provider
       value={{
         ...state,
+
+        // Methods
+        handleEditorInput,
       }}
     >
       {children}

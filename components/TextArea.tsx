@@ -1,5 +1,5 @@
 // React & dependencies
-import { FC, useRef } from "react";
+import { FC, useContext, useRef } from "react";
 
 // Material Components
 import { Box, Button, TextareaAutosize, useTheme } from "@mui/material";
@@ -7,6 +7,7 @@ import KeyboardIcon from "@mui/icons-material/Keyboard";
 
 // My components
 import TopWindowBar from "./TopWindowBar";
+import { StateContext } from "../context";
 
 // Queries & Mutations
 
@@ -16,6 +17,7 @@ interface Props {
 }
 const TextArea: FC<Props> = ({ id }) => {
   const theme = useTheme();
+  const { handleEditorInput } = useContext(StateContext);
 
   const textAreaRef = useRef<any>();
 
@@ -40,6 +42,7 @@ const TextArea: FC<Props> = ({ id }) => {
         style={{
           backgroundColor: theme.palette.background.paper,
         }}
+        onChange={(e) => handleEditorInput(e)}
       />
     </Box>
   );

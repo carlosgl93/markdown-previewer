@@ -3,7 +3,7 @@ import Head from "next/head";
 
 import TextArea from "../components/TextArea";
 import PreviewContainer from "../components/PreviewContainer";
-import { Box } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 
 const Home: NextPage = () => {
   return (
@@ -14,13 +14,7 @@ const Home: NextPage = () => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <Box
-        display='flex'
-        justifyContent='center'
-        sx={{
-          backgroundColor: "#97c6ca",
-        }}
-      >
+      <Box display='flex' justifyContent='center' flexDirection='column'>
         {/* Component to insert the text that the user wants to see as markdown */}
         <TextArea id={"editor"} />
 

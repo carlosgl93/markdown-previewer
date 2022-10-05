@@ -1,10 +1,12 @@
 // React & dependencies
-import { FC } from "react";
+import { FC, useContext, useRef } from "react";
 
 // Material Components
-import { Box } from "@mui/material";
-
+import { Box, Button, TextField, useTheme } from "@mui/material";
+import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
 // My components
+import TopWindowBar from "./TopWindowBar";
+import { StateContext } from "../context";
 
 // Queries & Mutations
 
@@ -13,6 +15,31 @@ interface Props {
   id: string;
 }
 const PreviewContainer: FC<Props> = ({ id }) => {
-  return <Box id={id}></Box>;
+  const theme = useTheme();
+  const markupRef = useRef<any>();
+
+  const { textMarkedUp } = useContext(StateContext);
+
+  return (
+    <Box id={id}>
+      <TopWindowBar
+        childrenRef={markupRef}
+        icon={
+          <Button sx={{ color: theme.palette.secondary.main }}>
+            <AutoAwesomeIcon />
+          </Button>
+        }
+      />
+      <Box
+        ref={markupRef}
+        sx={{
+          backgroundColor: theme.palette.background.paper,
+          height: "50vh",
+        }}
+      >
+        {textMarkedUp}
+      </Box>
+    </Box>
+  );
 };
 export default PreviewContainer;

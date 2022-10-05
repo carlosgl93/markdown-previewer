@@ -20,8 +20,6 @@ const TopWindowBar: FC<Props> = ({ childrenRef, icon }) => {
   const [maximized, setMaximized] = useState(false);
   const [minimized, setMinimized] = useState(false);
 
-  console.log({ childrenRef });
-
   const handleMaximize = () => {
     setMaximized(!maximized);
     childrenRef.current.style.height = maximized ? "100vh" : "auto";
