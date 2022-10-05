@@ -27,8 +27,8 @@ const TopWindowBar: FC<Props> = ({ childrenRef, icon }) => {
   };
 
   const handleMinimize = () => {
-    setMinimized(!minimized);
     childrenRef.current.style.height = minimized ? "0vh" : "auto";
+    setMinimized(!minimized);
   };
 
   return (

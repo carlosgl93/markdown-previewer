@@ -14,10 +14,13 @@ const Home: NextPage = () => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <Box display='flex' justifyContent='center' flexDirection='column'>
-        {/* Component to insert the text that the user wants to see as markdown */}
-        <TextArea id={"editor"} />
-
+      <Box display='flex' justifyContent='center'>
+        <Box>
+          {/* Component to insert the text that the user wants to see as markdown */}
+          <TextArea id={"editor"} />
+        </Box>
+      </Box>
+      <Box>
         {/* Component to display the text that the user inserted into the textarea element  */}
         <PreviewContainer id='preview' />
       </Box>

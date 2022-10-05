@@ -16,11 +16,8 @@ export const stateReducer = (state: State, action: StateActionType): State => {
 
     case "[Editor] - Handle Input":
       // obtengo todo el text y lo separo en los espacios
-      const expressions = action.payload.split(" ");
-      console.log({ expressions });
-      // TODO: RESULTS = LOGIC TO MARKUP THE EXTRACTED VALUES IN EXPRESSIONS
-      const results = expressions;
-      return { ...state, textToMarkUp: expressions, textMarkedUp: expressions };
+      const expressions = action.payload;
+      return { ...state, textMarkedUp: expressions };
     default:
       return state;
   }

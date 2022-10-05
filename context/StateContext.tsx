@@ -2,7 +2,7 @@ import { createContext } from "react";
 
 interface ContextProps {
   textToMarkUp: string[];
-  textMarkedUp: string[];
+  textMarkedUp: string;
 
   handleEditorInput: (event: KeyboardEvent) => void;
 }

@@ -8,6 +8,7 @@ import KeyboardIcon from "@mui/icons-material/Keyboard";
 // My components
 import TopWindowBar from "./TopWindowBar";
 import { StateContext } from "../context";
+import { marked } from "marked";
 
 // Queries & Mutations
 
@@ -17,7 +18,7 @@ interface Props {
 }
 const TextArea: FC<Props> = ({ id }) => {
   const theme = useTheme();
-  const { handleEditorInput } = useContext(StateContext);
+  const { handleEditorInput, textMarkedUp } = useContext(StateContext);
 
   const textAreaRef = useRef<any>();
 
@@ -41,7 +42,10 @@ const TextArea: FC<Props> = ({ id }) => {
         minRows={20}
         style={{
           backgroundColor: theme.palette.background.paper,
+          overflow: "scroll",
+          height: "auto",
         }}
+        defaultValue={textMarkedUp}
         onChange={(e: any) => handleEditorInput(e)}
       />
     </Box>
