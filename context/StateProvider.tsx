@@ -9,7 +9,18 @@ export interface State {
 
 const STATE_INITIAL_STATE: State = {
   textToMarkUp: [""],
-  textMarkedUp: `# Welcome to my React Markdown Previewer! -- You can also maximize/minimize windows.
+  textMarkedUp: `# Welcome to my React Markdown Previewer!
+  
+## Made by me: **_Carlos Gumucio Labbé_**
+### I made this with the following frameworks/libraries:
+1. Nextjs.
+2. Material UI Components and Theme.
+3. React Hooks:
+- useContext
+- useEffect
+- useState
+- useRef
+4. Markedjs
 
 ## Made by me: Carlos Gumucio Labbé
 ### Here's some other cool stuff:
